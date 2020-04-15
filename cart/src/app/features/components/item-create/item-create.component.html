@@ -1,0 +1,104 @@
+<div class="container-fluid container-fluid-cst">
+    <div class="row">
+        <div class="col-12">
+            <div class="page-header">
+                <h1 class="page-header--text">{{btnText}} Item </h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row my-4">
+                        <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12 col-12 border-right ">
+                            <div class="text-center py-4" *ngIf="imageValidation">
+                                <img src="{{imageValue}}" height="400" width="400">
+                            </div>
+                            <div class="no-records mx-4 my-2" *ngIf="!imageValidation">
+                                <h4 class="title-color">Image Preview!!!</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12 col-12">
+                            <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+                                <div class="mx-5">
+                                    <div class="form-group mt-2">
+                                        <label for="name">Product Name: </label>
+                                        <input type="text" class="form-control" formControlName="name" name="name"
+                                            id="name" #firstelm placeholder="Enter product name"
+                                            [ngClass]="{ 'is-invalid': (!!f.name.dirty || !!f.name.touched) && f.name.invalid }">
+                                        <div *ngIf="(!!f.name.dirty || !!f.name.touched) && f.name.invalid" class="invalid-feedback">
+                                            <div *ngIf="f.name.errors.required">Product Name is required</div>
+                                            <div *ngIf="f.name.errors.maxlength">Product Name must be of 100 characters max</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="image">Product Image URL: </label>
+                                        <input type="text" class="form-control" formControlName="image" name="image"
+                                            id="image" placeholder="Enter Image url like 'https://image.jpg'"
+                                            [ngClass]="{ 'is-invalid': (!!f.image.dirty || !!f.image.touched) && f.image.invalid }">
+                                        <div *ngIf="(!!f.image.dirty || !!f.image.touched) && f.image.invalid" class="invalid-feedback">
+                                            <div *ngIf="f.image.errors.required">Image url is required</div>
+                                            <div *ngIf="f.image.errors.pattern">Invalid image url</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="price">Product selling Price</label>
+                                        <input type="number" min="0" class="form-control" formControlName="price"
+                                            name="price" id="price" placeholder="Enter selling price"
+                                            [ngClass]="{ 'is-invalid': (!!f.price.dirty || !!f.price.touched) && f.price.invalid }">
+                                        <div *ngIf="(!!f.price.dirty || !!f.price.touched) && f.price.invalid" class="invalid-feedback">
+                                            <div *ngIf="f.price.errors.required">selling price is required</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="seller">Seller Name</label>
+                                        <input type="text" class="form-control" formControlName="seller" name="seller"
+                                            id="seller" placeholder="Enter seller name"
+                                            [ngClass]="{ 'is-invalid': (!!f.seller.dirty || !!f.seller.touched) && f.seller.invalid }">
+                                        <div *ngIf="(!!f.seller.dirty || !!f.seller.touched) && f.seller.invalid" class="invalid-feedback">
+                                            <div *ngIf="f.seller.errors.required">seller name is required</div>
+                                            <div *ngIf="f.seller.errors.maxlength">seller name must be of 50 characters max</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="instoke">Is product avilable?</label>
+                                        <div class="toggle-switch">
+                                            <!-- <ui-switch class="" [checked]="true" size="small"
+                                                (change)="changeAvailability($event)" color="#832e5b">
+                                            </ui-switch> -->
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="description">Product Description</label>
+                                        <textarea class="form-control" id="description" rows="3"
+                                            placeholder="Enter product description" formControlName="description"
+                                            [ngClass]="{ 'is-invalid': (!!f.description.dirty || !!f.description.touched) && f.description.invalid }"></textarea>
+                                        <div *ngIf="(!!f.description.dirty || !!f.description.touched) && f.description.invalid" class="invalid-feedback">
+                                            <div *ngIf="f.description.errors.required">Description is required</div>
+                                            <div *ngIf="f.description.errors.maxlength">Description must be of 300 characters max</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row border-top justify-content-end pt-4 pr-3 mt-4 ">
+                                        <button class="btn secondary-btn mr-3" type="button" (click)="cancelForm()">
+                                            Cancel
+                                        </button>
+                                        <button type="submit" [disabled]="submitted || productForm.invalid" class="btn primary-btn">
+                                            {{btnText}}
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

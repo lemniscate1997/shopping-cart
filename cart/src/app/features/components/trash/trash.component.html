@@ -1,0 +1,29 @@
+<div class="container-fluid container-fluid-cst">
+    <div *ngIf="products.length===0">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="no-records">
+                        <img src="assets/images/no-data.png" alt="No Records Found" class="mb-3">
+                        <div>
+                            <h4 class="title-color">No products found in trash!!!</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="products.length > 0">
+        <div class="row justify-content-end">
+            <div class="col-lg-2 col-xl-2 col-md-2 col-sm-12 col-12 m-b-15">
+                <button class="mb-4 btn primary-btn mr-2" type="button" (click)="restoreAll()">Restore All</button>
+                <button class="mb-4 btn primary-btn" type="button" (click)="deleteAll()">Delete All</button>
+            </div>
+        </div>
+        <div class="row">
+            <div *ngFor="let product of products" class="col-lg-4 col-xl-4 col-md-6 col-sm-12 col-12">
+                <app-item-desplay [item]="product" [isActive]="false" (changeStauts)="changeStatus($event, [product.id])"></app-item-desplay>
+            </div>
+        </div>
+    </div>
+</div>

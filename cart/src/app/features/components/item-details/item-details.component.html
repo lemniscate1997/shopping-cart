@@ -1,0 +1,57 @@
+<div class="container-fluid container-fluid-cst">
+    <div class="row">
+        <div class="col-12">
+            <div class="page-header">
+                <h1 class="page-header--text pl-2 cursor-p" (click)="back()">
+                    < Back </h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row ml-5 mt-4 mb-2 text-left">
+                        <div class="product-text">
+                            <h5 class="product-name">
+                                <span>{{item.name}}</span>
+                                <span class="seller">by {{item.seller}}</span>
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="row mb-5">
+                        <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12 col-12 border-right ">
+                            <div class="text-center py-4">
+                                <img src="{{item.image}}" height="400" width="400">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12 col-12">
+                            <div class="ml-5 mr-5">
+                                <div class="row product pb-4 px-2">
+                                    Review by: <span class="text-warning name ml-1">{{item.review}}</span>
+                                </div>
+                                <div class="row product border-top py-4 px-2">
+                                    M.R.P.: ₹<span class="text-danger ml-1 name">{{item.price}}</span>
+                                </div>
+
+                                <div class="row product border-top py-4 px-2">
+                                    <span class="text-success name">{{item.instoke? 'In stock' : 'Out of stock'}}</span>
+                                    <span class="mt-1 description">{{item.description}}</span>
+                                </div>
+
+                                <div class="row border-top justify-content-end pt-4 pr-3 mt-auto ">
+                                    <button class="btn primary-btn mr-3" type="button" (click)="moveToTrash()">
+                                        Move to trash
+                                    </button>
+                                    <button class="btn primary-btn" type="button" (click)="editItem()">
+                                        Edit
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

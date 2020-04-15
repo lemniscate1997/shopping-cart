@@ -1,0 +1,20 @@
+<div class="col-12 product">
+    <div class="card">
+        <div class="card-body">
+            <div class="row mx-auto my-4" id="container">
+                <div id="name"><img src="{{item.image}}" height="200" width="200"></div>
+            </div>
+            <div class="row text-center name">{{item.name}}</div>
+            <div class="row other"><span class="pr-2 font-weight-bold">Price:</span> ₹{{item.price}}</div>
+            <div class="row other"><span class="pr-2 font-weight-bold">Review: </span> {{item.review}}</div>
+            
+            <div *ngIf="isActive" class="row justify-content-center my-1">
+                <button class="btn primary-btn" type="button" (click)="viewItem()">View</button>
+            </div>
+            <div *ngIf="!isActive" class="row justify-content-center my-1">
+                <button class="btn primary-btn mr-3" type="button" (click)="deleteItem()">Delete</button>
+                <button class="btn primary-btn" type="button" (click)="restoreItem()">Restore</button>
+            </div>
+        </div>
+    </div>
+</div>

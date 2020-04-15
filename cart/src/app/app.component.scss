@@ -1,0 +1,49 @@
+@import "../scss/colors.scss";
+
+#wrapper {
+  padding-left: 194px;
+  margin-left: 0px;
+  margin-top: 60px;
+  transition: all 0.4s ease;
+
+  &.active {
+    padding-left: 0px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 1024px) {
+  #wrapper {
+    padding: 0px;
+    margin: 0px;
+
+    &.active {
+      padding: 0px;
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 571px) and (max-width: 767px) {
+    .container-fluid-cst {
+      margin-top: 69px;
+    }
+  }
+
+  @media (min-width: 395px) and (max-width: 571px) {
+    .container-fluid-cst {
+      margin-top: 69px;
+    }
+  }
+
+  .cst-back-drop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background: rgba($color: $black, $alpha: 0.5);
+    display: block;
+    transition: all 0.3s;
+  }
+}

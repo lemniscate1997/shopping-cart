@@ -1,0 +1,74 @@
+@import "../../../../scss/colors.scss";
+
+.menubar {
+  width: 194px;
+  position: fixed;
+  top: 55px;
+  bottom: 0;
+  left: 0px;
+  z-index: 2;
+  background: $primary;
+  background: -moz-linear-gradient(top, $primary 1%, $primary-light 100%);
+  background: -webkit-linear-gradient(top, $primary 1%, $primary-light 100%);
+  background: linear-gradient(to bottom, $primary 1%, $primary-light 100%);
+}
+
+@media (min-width: 571px) and (max-width: 767px) {
+  .menubar {
+    top: 89px;
+  }
+}
+
+@media (min-width: 395px) and (max-width: 571px) {
+  .menubar {
+    top: 134px;
+  }
+}
+
+@media (min-width: 325px) and (max-width: 395px) {
+  .menubar {
+    top: 170px;
+  }
+}
+
+.menubar li {
+  list-style-type: none;
+  border-bottom: 1px solid $primary-light;
+}
+
+.menubar li {
+  cursor: pointer;
+}
+
+.menubar li:hover {
+  background-color: $primary-dark;
+}
+
+.nav-menu {
+  li {
+    font-size: 14px;
+    padding: 12px;
+    width: 100%;
+    display: block;
+    color: $white;
+    transition: all 0.3s ease;
+
+    a {
+      display: block;
+    }
+
+    &.nav-active,
+    &:hover {
+      color: $primary;
+      background-color: $white;
+    }
+  }
+}
+
+#wrapper {
+  transition: all 0.4s ease 0s;
+}
+
+#wrapper.active {
+  left: -250px;
+}

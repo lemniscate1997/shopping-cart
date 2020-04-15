@@ -1,0 +1,269 @@
+@import "./colors.scss";
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900");
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  padding: 0px;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  color: $grey;
+  line-height: 1.42857143;
+  background-color: $page-background;
+}
+
+.navbar {
+  .navbar-brand {
+    color: $primary;
+    &:hover,
+    &:focus {
+      color: $primary;
+    }
+  }
+}
+
+.overflow-filter {
+  overflow: hidden !important;
+}
+
+ul {
+  padding-left: 0;
+}
+
+.container-fluid-cst {
+  padding: 35px;
+}
+
+.text-bold {
+  font-weight: 500 !important;
+}
+
+.page-header {
+  position: relative;
+  border-bottom: 1px solid $secondary-light;
+  padding-bottom: 20px;
+  margin-bottom: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  .page-header--text {
+    font-size: 21px;
+    color: $secondary-dark;
+    margin-bottom: 0;
+  }
+}
+
+.p-0 {
+  padding: 0px;
+}
+
+.btn {
+  color: $white;
+  border: 0px;
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 8px 20px;
+  transition: all 0.5s;
+  outline: none !important;
+  box-shadow: none !important;
+  &.primary-btn {
+    background: $primary;
+    &:hover,
+    &:focus {
+      background-color: $primary-dark;
+      color: $white;
+      &:disabled {
+        background-color: $primary-light;
+        cursor: not-allowed;
+      }
+    }
+  }
+  &.secondary-btn {
+    color: $grey;
+    background: $secondary;
+    &:hover,
+    &:focus {
+      color: $grey;
+      background: $secondary-light;
+    }
+    &:disabled {
+      background-color: $secondary-light;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.search-filter {
+  height: 28px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid $secondary-light;
+}
+
+.icon-bg-transparent {
+  background-color: transparent;
+  border-color: transparent;
+  margin-bottom: 10px;
+}
+
+.header-label {
+  font-weight: 700;
+  color: $grey;
+}
+
+.text-primary {
+  color: $primary !important;
+}
+
+.text-grey {
+  color: $grey !important;
+}
+
+.modal-header {
+  color: $white;
+  font-size: 17px;
+  background-color: $primary;
+  border-radius: 3px;
+}
+
+.modal-close-button {
+  color: $white;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    color: $white;
+  }
+}
+
+.close {
+  color: $white;
+  &:not(:disabled) {
+    &:not(.disabled) {
+      &:focus,
+      &:hover {
+        outline: none;
+        color: $white;
+      }
+    }
+  }
+}
+
+.card {
+  margin: 0 auto;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.message-block {
+  .error-message {
+    display: none;
+  }
+}
+
+.message-block {
+  .error-message:first-child {
+    display: block;
+  }
+}
+
+input {
+  .ng-invalid {
+    &.ng-touched {
+      border: 1px solid $red;
+    }
+  }
+}
+
+textarea {
+  .ng-invalid {
+    &.ng-touched {
+      border: 1px solid $red;
+    }
+  }
+}
+
+a {
+  &:active,
+  &:focus {
+    color: $primary !important;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+.question {
+  color: $secondary-dark;
+  font-size: 15px;
+}
+
+.overflow-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.align-content {
+  text-align: right;
+}
+
+.cursor-p {
+  cursor: pointer;
+}
+
+.cursor-g {
+  cursor: grab;
+}
+
+.message-cross-position {
+  top: 6px;
+  right: 11px;
+  position: absolute;
+}
+
+.no-records {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 300px;
+  border: 2px dashed #b1b1b1;
+  border-radius: 4px;
+  padding: 10px;
+  &.no-border {
+    border: 0p;
+  }
+  .title-color {
+    color: #b1b1b1;
+    text-align: center;
+  }
+}
+
+.nav-menu-reponsive {
+  height: calc(100% - 200px);
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: $primary;
+  border-radius: 5px;
+}
+::-webkit-scrollbar:hover {
+    cursor: pointer;
+}
+::-webkit-scrollbar {
+    width: 0.25rem;
+    height: 0.25rem;
+}

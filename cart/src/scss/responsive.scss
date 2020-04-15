@@ -1,0 +1,74 @@
+@import "./colors.scss";
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container-fluid-cst {
+    margin-top: 50px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .m-b-15 {
+    margin-bottom: 15px;
+  }
+
+  .group {
+    label {
+      float: left !important;
+    }
+  }
+
+  .container-fluid-cst {
+    margin-top: 50px;
+  }
+
+  .content-center {
+    text-align: center;
+  }
+
+  .align-content {
+    text-align: left;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .m-b-15 {
+    margin-bottom: 15px;
+  }
+
+  .group {
+    label {
+      float: left !important;
+    }
+  }
+
+  .container-fluid-cst {
+    margin-top: 50px;
+  }
+
+  .content-center {
+    text-align: center;
+  }
+
+  .align-content {
+    text-align: left;
+  }
+}
+
+
+@media (min-width: 571px) and (max-width: 767px) {
+  .container-fluid-cst {
+    margin-top: 89px;
+  }
+}
+
+@media (min-width: 395px) and (max-width: 571px) {
+  .container-fluid-cst {
+    margin-top: 134px;
+  }
+}
+
+@media (min-width: 325px) and (max-width: 395px) {
+  .container-fluid-cst {
+    margin-top: 170px;
+  }
+}

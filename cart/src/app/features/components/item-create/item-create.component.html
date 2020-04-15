@@ -49,7 +49,7 @@
 
                                     <div class="form-group">
                                         <label for="price">Product selling Price</label>
-                                        <input type="number" min="0" class="form-control" formControlName="price"
+                                        <input type="number" min="0" max="5000" class="form-control" formControlName="price"
                                             name="price" id="price" placeholder="Enter selling price"
                                             [ngClass]="{ 'is-invalid': (!!f.price.dirty || !!f.price.touched) && f.price.invalid }">
                                         <div *ngIf="(!!f.price.dirty || !!f.price.touched) && f.price.invalid"

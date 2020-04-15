@@ -231,19 +231,30 @@ export class ProductService {
 
   constructor() { }
 
-  GetSortOrder(prop, order = 1) {  
-    return function(a, b) {  
-        if (a[prop] > b[prop]) {  
-            return order*1;  
-        } else if (a[prop] < b[prop]) {  
-            return order*-1;  
-        }  
-        return 0;  
-    }  
-}  
+  GetSortOrder(prop, order = 1) {
+    return function (a, b) {
+      if (a[prop] > b[prop]) {
+        return order * 1;
+      } else if (a[prop] < b[prop]) {
+        return order * -1;
+      }
+      return 0;
+    }
+  }
 
-  getItems(status = 1, search = '', sortOrder = ['price', '1']): Observable<any[]> {
-    let result = this.items.filter(i => i.status == status && i.name.toLowerCase().includes(search.toLowerCase()));
+  objectFilter(item, filter = {}) {
+    if (filter.hasOwnProperty('price')) {
+      let object = filter['price'].split('-');
+      if (item.price < Number(object[0]) || item.price > Number(object[1])) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  getItems(status = 1, search = '', sortOrder = ['price', '1'], filter = {}): Observable<any[]> {
+    let result = this.items.filter(i => i.status == status && i.name.toLowerCase().includes(search.toLowerCase()) && this.objectFilter(i, filter));
     const [field, order] = sortOrder;
     result.sort(this.GetSortOrder(field, Number(order)));
     return of(result);

@@ -42,10 +42,6 @@ export class ItemCreateComponent implements OnInit {
     this.elementRef.nativeElement.focus();
   }
 
-  changeAvailability(instoke) {
-    this.productForm.patchValue({ instoke: instoke });
-  }
-
   setValue() {
     this.productService.getItem(this.id).subscribe(({ id, review, status, ...product }) => {
       this.productForm.setValue(product);

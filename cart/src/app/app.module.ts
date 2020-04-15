@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -9,6 +10,8 @@ import { AppComponent } from './app.component';
 import { BaseModule } from './base/base.module';
 import { ErrorpageService } from './shared/services/errorpage.service';
 import { SharedModule } from './shared/shared.module';
+import { FeaturesModule } from './features/features.module';
+import { StorageService } from './shared/services/storage.service';
 
 @NgModule({
   declarations: [
@@ -16,6 +19,7 @@ import { SharedModule } from './shared/shared.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
@@ -23,7 +27,7 @@ import { SharedModule } from './shared/shared.module';
     BaseModule,
     SharedModule
   ],
-  providers: [BaseModule, ErrorpageService],
+  providers: [BaseModule, ErrorpageService, StorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

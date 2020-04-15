@@ -10,7 +10,10 @@ import { ItemDetailsComponent } from './components/item-details/item-details.com
 import { ReactiveFormsModule } from '@angular/forms';
 import { ItemCreateComponent } from './components/item-create/item-create.component';
 
-// import { UiSwitchModule } from 'ngx-ui-switch';
+import { InputSwitchModule } from 'primeng/inputswitch';
+import { DropdownModule } from 'primeng/dropdown';
+import { RadioButtonModule } from 'primeng/radiobutton';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import { ItemCreateComponent } from './components/item-create/item-create.compon
     CommonModule,
     FeaturesRoutingModule,
     ReactiveFormsModule,
-    // UiSwitchModule
+    InputSwitchModule,
+    DropdownModule,
+    RadioButtonModule
   ],
   providers: [
     ProductService

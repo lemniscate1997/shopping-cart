@@ -17,8 +17,24 @@
         </div>
     </div>
     <div class="row" *ngIf="products.length!==0">
-        <div *ngFor="let product of products" class="col-lg-4 col-xl-4 col-md-6 col-sm-12 col-12">
-            <app-item-desplay [item]="product" [isActive]="true"></app-item-desplay>
+        <div class="col-lg-2 col-xl-2 col-md-12 col-sm-12 col-12">
+            <div class="card mt-4">
+                <div class="card-body">
+                    <form [formGroup]="sortForm">
+                        <div class="form-group">
+                            <label for="sort">Sort by:</label>
+                            <p-dropdown class="formcontrol" optionLabel="label" [options]="sortData" formControlName="sort"></p-dropdown>
+                        </div>
+                    </form> 
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-10 col-xl-10 col-md-12 col-sm-12 col-12">
+            <div class="row">
+                <div *ngFor="let product of products" class="col-lg-4 col-xl-4 col-md-6 col-sm-12 col-12">
+                    <app-item-desplay [item]="product" [isActive]="true"></app-item-desplay>
+                </div>
+            </div>
         </div>
     </div>
     <div class="new-create">

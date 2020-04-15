@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ItemCreateComponent } from './components/item-create/item-create.component';
 
 import { InputSwitchModule } from 'primeng/inputswitch';
+import {DropdownModule} from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { InputSwitchModule } from 'primeng/inputswitch';
     CommonModule,
     FeaturesRoutingModule,
     ReactiveFormsModule,
-    InputSwitchModule
+    InputSwitchModule,
+    DropdownModule
   ],
   providers: [
     ProductService

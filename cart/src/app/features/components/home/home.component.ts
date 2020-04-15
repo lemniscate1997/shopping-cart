@@ -36,16 +36,24 @@ export class HomeComponent implements OnInit {
     return this.searchFilterForm.get('searchString').value;
   }
 
+  get sortObject() {
+    return this.sortForm.get('sort').value;
+  }
+
   onFormFieldValueChange() {
     this.searchFilterForm.get('searchString').valueChanges.pipe(debounceTime(2000),
     ).
-      subscribe(val => {
-        this.fetchProductData(val);
+      subscribe(value => {
+        this.fetchProductData(value, this.sortObject);
       });
+
+    this.sortForm.get('sort').valueChanges.subscribe(selected => {
+      this.fetchProductData(this.searchStringValue, selected.value)
+    });
   }
 
-  fetchProductData(searchString = '') {
-    this.productService.getItems(1, searchString).subscribe(data => {
+  fetchProductData(searchString = '', sortObj = ['price', '1']) {
+    this.productService.getItems(1, searchString, sortObj).subscribe(data => {
       this.products = data;
     })
   }

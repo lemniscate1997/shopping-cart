@@ -33,19 +33,23 @@ export class HomeComponent implements OnInit {
     this.filterForm = this.fb.group({
       price: ['']
     });
-    
-    if(localStorage.getItem('sort')!=null) {
-      this.sortForm.patchValue({sort: JSON.parse(localStorage.getItem('sort'))});
+
+    if (localStorage.getItem('sort') != null) {
+      this.sortForm.patchValue({ sort: JSON.parse(localStorage.getItem('sort')) });
     }
-    if(localStorage.getItem('filters')!=null) {
+    if (localStorage.getItem('filters') != null) {
       this.filterResponse = JSON.parse(localStorage.getItem('filters'));
       this.filterForm.patchValue(this.filterResponse);
     }
-    
+
     this.sortData = constant.SORT;
     this.filterData = constant.FILTER;
     this.fetchProductData();
     this.onFormFieldValueChange();
+  }
+
+  get testForEmptyRecords() {
+    return this.searchStringValue == null && Object.keys(this.filterResponse).length != 0 && this.products.length != 0
   }
 
   get searchStringValue() {

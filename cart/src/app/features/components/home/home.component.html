@@ -1,13 +1,13 @@
 <div class="container-fluid container-fluid-cst">
     <div class="row justify-content-end">
         <div class="col-lg-2 col-xl-2 col-md-2 col-sm-12 col-12 mb-3">
-            <form [formGroup]="searchFilterForm" *ngIf="products.length !== 0">
+            <form [formGroup]="searchFilterForm" *ngIf="!testForEmptyRecords">
                 <input name="search" class="form-control" formControlName="searchString" placeholder="Search product"
                     title="Search by product name">
             </form>
         </div>
     </div>
-    <div class="col-12" *ngIf="products.length===0">
+    <div class="col-12" *ngIf="testForEmptyRecords">
         <div class="no-records">
             <img src="assets/images/no-data.png" alt="No Records Found" class="mb-3">
             <div>
@@ -16,14 +16,14 @@
             <p class="title-color">Hurry, you can be the first one to create one...</p>
         </div>
     </div>
-    <div class="row" *ngIf="products.length!==0">
-        <div class="col-lg-2 col-xl-2 col-md-12 col-sm-12 col-12">
+    <div class="row" *ngIf="!testForEmptyRecords">
+        <div class="col-lg-12 col-xl-3 col-md-12 col-sm-12 col-12">
             <div class="card mt-4">
                 <div class="card-body">
                     <div class="col-12">
                         <form [formGroup]="sortForm">
                             <div class="form-group">
-                                <label for="sort">Sort by:</label>
+                                <label class="pr-2" for="sort">Sort by:</label>
                                 <p-dropdown class="formcontrol" optionLabel="label" [options]="sortData"
                                     formControlName="sort"></p-dropdown>
                             </div>
@@ -50,8 +50,15 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-10 col-xl-10 col-md-12 col-sm-12 col-12">
+        <div class="col-lg-12 col-xl-9 col-md-12 col-sm-12 col-12">
             <div class="row">
+                <div class="no-records col-12 mt-4" *ngIf="products.length == 0">
+                    <img src="assets/images/no-data.png" alt="No Records Found" class="mb-3">
+                    <div>
+                        <h4 class="title-color">No products found !!!</h4>
+                    </div>
+                    <p class="title-color">Please change the filters...</p>
+                </div>
                 <div *ngFor="let product of products" class="col-lg-4 col-xl-4 col-md-6 col-sm-12 col-12">
                     <app-item-desplay [item]="product" [isActive]="true"></app-item-desplay>
                 </div>

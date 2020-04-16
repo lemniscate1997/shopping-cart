@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FeaturesRoutingModule } from './features-routing.module';
 import { TrashComponent } from './components/trash/trash.component';
 import { HomeComponent } from './components/home/home.component';
-import { ItemDesplayComponent } from './components/item-desplay/item-desplay.component';
+import { ItemDisplayComponent } from './components/item-display/item-display.component';
 import { ProductService } from './services/product.service';
 import { ItemDetailsComponent } from './components/item-details/item-details.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -19,7 +19,7 @@ import { RadioButtonModule } from 'primeng/radiobutton';
   declarations: [
     HomeComponent,
     TrashComponent,
-    ItemDesplayComponent,
+    ItemDisplayComponent,
     ItemDetailsComponent,
     ItemCreateComponent
   ],

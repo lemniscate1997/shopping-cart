@@ -2,11 +2,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-item-desplay',
-  templateUrl: './item-desplay.component.html',
-  styleUrls: ['./item-desplay.component.scss']
+  selector: 'app-item-display',
+  templateUrl: './item-display.component.html',
+  styleUrls: ['./item-display.component.scss']
 })
-export class ItemDesplayComponent implements OnInit {
+export class ItemDisplayComponent implements OnInit {
 
   @Input() item;
   @Input() isActive;

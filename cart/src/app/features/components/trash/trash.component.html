@@ -22,7 +22,7 @@
         </div>
         <div class="row">
             <div *ngFor="let product of products" class="col-lg-4 col-xl-4 col-md-6 col-sm-12 col-12">
-                <app-item-desplay [item]="product" [isActive]="false" (changeStauts)="changeStatus($event, [product.id])"></app-item-desplay>
+                <app-item-display [item]="product" [isActive]="false" (changeStauts)="changeStatus($event, [product.id])"></app-item-display>
             </div>
         </div>
     </div>
